@@ -1,0 +1,28 @@
+{% extends 'elementos/estructura.html' %}
+{% block contenido %}
+    <div class="container cat p-3 text-center">
+        {% for categoria in categorias %}
+            <a href="{% url 'listado_de_categoria' categoria.id %}" class="cat-link btn btn-pink">{{categoria.nombre}}</a>
+        {% endfor %}
+    </div>
+    <div class="container rounded border p-5 text-center bg-pink text-white">
+        <h1>NOTICIAS{% if categoria %} DE CATEGORIA: {{categoria.nombre | upper}} </h1><hr>
+        <a class="btn btn-pink form-control border-white" href="{% url 'listado_noticias' %}">VOLVER</a>
+        {% endif %}
+        {% for noticia in noticias %}
+        <div class="row rounded border shadow-lg text-center p-5 mt-5 bg-pink text-white" style="background:linear-gradient(rgba(0, 0, 0, 0.8),rgba(154,22,99, 0.7)),url({{ noticia.imagen.url }});background-repeat: no-repeat; background-size: cover;">
+            <div class="col  m-5">
+                <div class="card-body text-center">
+                    <h5 class="card-title fs-3 text-center">{{ noticia.titulo | upper }}</h5><hr>
+                    <h6 class="card-subtitle fs-5 mb-2">{{ noticia.subtitulo | upper }}<br></h6><hr>
+                    <p class="card-text text-center"><img src="{{ noticia.imagen.url }}" width="50%"></p><hr>
+                    <p class="card-text text-center">PUBLICADO POR <strong>{{ noticia.usuario | upper }}</strong> el {{ noticia.fecha_creacion }}</p><hr>
+                    <p class="card-text text-center">CATEGORIA: {{ noticia.categoria | upper }}</p>
+                    <a class="btn btn-pink form-control border-white" href="{% url 'noticia' noticia.slug %}">VER NOTICIA</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <br><br><br><br>
+{% endblock %}

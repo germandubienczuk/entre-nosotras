@@ -1,0 +1,15 @@
+{% extends 'elementos/estructura.html' %}
+{% load static %}
+{% block contenido %}
+<div class="container rounded border shadow-lg text-center p-5 mt-5 bg-pink text-white" style="background:linear-gradient(rgba(0, 0, 0, 0.8),rgba(154,22,99, 0.7)),url({% static 'imagenes/mujeres.jpg' %});background-repeat: no-repeat;background-size: cover;">
+    <img class="d-block mx-auto mb-4" src="{% static 'imagenes/logo.png' %}" width="400">
+    <div class="col-lg-6 mx-auto">
+        <hr>
+        <p class="fs-3 ">
+            La fundación fue creada con el fin de apoyar a las mujeres vulnerables de la sociedad, a elevar su nivel de 
+            vida de forma sustentable a largo plazo, mediante programas, estrategias y actividades.
+        </p>
+    </div><br>
+</div>
+<br><br><br>
+{% endblock %}

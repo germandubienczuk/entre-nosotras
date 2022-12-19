@@ -1,0 +1,4 @@
+<form class="form-inline my-2 my-lg-0" action="{% url 'cerrar_sesion' %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="CERRAR SESION" class="nav-link btn-cerrar-sesion" >
+</form>

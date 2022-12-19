@@ -1,0 +1,38 @@
+body{
+    background-color: #ffe3e8;
+}
+
+.bg-pink{
+    background-color: #9a1663;
+}
+
+.btn-pink{
+    background-color: #9a1663;
+    color: #fff;
+}
+.btn-pink:hover{
+    background-color: #fff;
+    color: #9a1663;
+    border: #9a1663 1px solid;
+}
+
+.btn-cerrar-sesion{
+    background: none;
+    border: none;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer; 
+}
+.btn-cerrar-sesion:hover{
+    color: #fff;
+}
+
+.bg-dark-pink-gradient{
+    background:linear-gradient(rgba(154,22,99, 0.7),rgba(0, 0, 0, 0.8))
+}
+
+.cat-link{
+    display: inline-block;
+    font-size: 20px;
+    padding: 20px;
+}

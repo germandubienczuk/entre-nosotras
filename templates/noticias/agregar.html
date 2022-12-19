@@ -1,0 +1,13 @@
+{% extends 'elementos/estructura.html' %}
+
+{% block contenido %}
+    {% load crispy_forms_tags %}
+    <div class="container border p-4 bg-dark-pink-gradient text-white">
+        <h1>AGREGAR NOTICIA</h1><hr>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form | crispy }}
+            <br><input type="submit" value="AGREGAR" class="btn-pink form-control">
+        </form>
+    </div>
+{% endblock %}

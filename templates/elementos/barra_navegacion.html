@@ -1,0 +1,34 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg mb-4 bg-pink p-2" >
+    <div class="container-fluid">
+        <img src="{% static 'imagenes/logo.png' %}" height="100">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
+            <i class="fas fa-bars text-white"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link text-white" href="{% url 'inicio' %}">INICIO</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="{% url 'listado_noticias' %}">NOTICIAS</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="{% url 'listado_eventos' %}">EVENTOS</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="{% url 'sobre_nosotros' %}">SOBRE NOSOTROS</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="{% url 'contacto' %}">CONTACTO</a></li>
+                {% if user.is_authenticated %}
+                    {% if user.is_staff %}
+                        <li class="nav-item"><a class="nav-link text-white" href="{% url 'agregar_noticia' %}">CARGAR NOTICIA</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="{% url 'agregar_evento' %}">CARGAR EVENTO</a></li>
+                    {% else %}
+                        <li class="nav-item"><a class="nav-link text-white" href="{% url 'inicio' %}">INICIO</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="{% url 'listado_noticias' %}">NOTICIAS</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="{% url 'listado_eventos' %}">EVENTOS</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="{% url 'sobre_nosotros' %}">SOBRE NOSOTROS</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="{% url 'contacto' %}">CONTACTO</a></li>
+                    {% endif %}
+                {% include '../usuarios/cerrar_sesion.html' %}
+                {% else %}
+                <li class="nav-item"><a class="nav-link text-white" href="{% url 'registrar' %}">REGISTRAR</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="{% url 'ingresar' %}">INGRESAR</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>

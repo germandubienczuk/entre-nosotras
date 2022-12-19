@@ -1,0 +1,21 @@
+{% extends 'elementos/estructura.html' %}
+
+{% block contenido %}
+    <div class="container rounded border p-5 text-center bg-pink text-white">
+        <h1>EVENTOS</h1><hr>
+        {% for evento in eventos %}
+        <div class="row">
+            <div class="card-body bg-dark-pink-gradient border border-white m-4 p-5">
+                <h5 class="card-title text-center">{{ evento.nombre | upper }}</h5><hr>
+                <h5 class="card-title text-center">FECHA: {{ evento.fecha_evento.date }}</h5><hr>
+                <h5 class="card-title text-center">HORA: {{ evento.fecha_evento.time }}</h5><hr>
+                <h6 class="card-subtitle mb-2">LUGAR: {{ evento.ubicacion | upper }}<br></h6><hr>
+                <p class="card-text">DETALLES:  {{ evento.detalle | upper }}</p>
+                <p class="card-text">COSTO: ${{ evento.costo }}</p>
+                <p class="card-text">CATEGORIA/MODALIDAD: {{ evento.categoria | upper }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <br><br><br><br>
+{% endblock %}

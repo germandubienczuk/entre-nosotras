@@ -1,0 +1,6 @@
+django
+cryptography
+pymysql
+mysql
+pillow
+django-crispy-forms

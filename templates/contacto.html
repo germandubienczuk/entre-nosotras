@@ -1,0 +1,15 @@
+{% extends 'elementos/estructura.html' %}
+{% block contenido %}
+<div class="container border p-4 bg-dark-pink-gradient text-white">
+    <h1>CONTACTENOS</h1><hr>
+    <form>
+        <div class="form-group">
+            <input class="form-control mb-4" type="text" placeholder="EMAIL">
+            <input class="form-control mb-4" type="text" placeholder="ASUNTO">
+            <textarea class="form-control mb-4" placeholder="MENSAJE"cols="40" rows="5"></textarea>
+            <input type="submit" value="ENVIAR" class="form-control btn btn-pink">
+        </div>
+    </form> 
+    <hr>
+</div>
+{% endblock %}
