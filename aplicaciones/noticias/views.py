@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
 from .models import *
 from . import forms
+from django.core.paginator import Paginator
 
 @login_required(login_url='ingresar')
 def agregar(request):
@@ -18,7 +19,10 @@ def agregar(request):
 
 def listado(request):
     categorias = CategoriaNoticia.objects.all()
-    noticias = Noticia.objects.all()
+    todas_noticias = Noticia.objects.all()
+    paginator = Paginator(todas_noticias, 3)
+    page = request.GET.get('page')
+    noticias = paginator.get_page(page)
     return render(request, 'noticias/listado.html', {'noticias':noticias, 'categorias':categorias})
 
 @login_required(login_url='ingresar')

@@ -36,3 +36,7 @@ body{
     font-size: 20px;
     padding: 20px;
 }
+
+.btn-end{
+    float: inline-end;
+}

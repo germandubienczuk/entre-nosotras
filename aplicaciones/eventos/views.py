@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
-from .models import Evento
+from .models import Evento,CategoriaEvento
 from . import forms
 
 @login_required(login_url='ingresar')
@@ -17,7 +17,15 @@ def agregar(request):
     return render(request, 'eventos/agregar.html', {'form':form})
 
 def listado(request):
+    categorias = CategoriaEvento.objects.all()
     eventos = Evento.objects.all()
-    return render(request, 'eventos/listado.html', {'eventos':eventos})
+    return render(request, 'eventos/listado.html', {'eventos':eventos, 'categorias':categorias})
+
+@login_required(login_url='ingresar')
+def listado_de_categoria_e(request, id):
+    categoria = CategoriaEvento.objects.get(id = id)
+    eventos = Evento.objects.filter(categoria = categoria)
+    return render(request, 'eventos/listado.html', {'eventos':eventos, 'categoria':categoria})
+
 
     
