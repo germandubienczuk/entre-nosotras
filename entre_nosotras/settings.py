@@ -54,11 +54,10 @@ WSGI_APPLICATION = 'entre_nosotras.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'entrenosotras',
-        'USER': 'admindb',
-        'PASSWORD': '12345678',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'NAME': 'germandubienczuk$entrenosotras',
+        'USER': 'germandubienczuk',
+        'PASSWORD': 'a111111A',
+        'HOST': 'germandubienczuk.mysql.pythonanywhere-services.com',
     }
 }
 
