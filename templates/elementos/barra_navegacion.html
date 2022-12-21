@@ -16,12 +16,6 @@
                     {% if user.is_staff %}
                         <li class="nav-item"><a class="nav-link text-white" href="{% url 'agregar_noticia' %}">CARGAR NOTICIA</a></li>
                         <li class="nav-item"><a class="nav-link text-white" href="{% url 'agregar_evento' %}">CARGAR EVENTO</a></li>
-                    {% else %}
-                        <li class="nav-item"><a class="nav-link text-white" href="{% url 'inicio' %}">INICIO</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="{% url 'listado_noticias' %}">NOTICIAS</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="{% url 'listado_eventos' %}">EVENTOS</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="{% url 'sobre_nosotros' %}">SOBRE NOSOTROS</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="{% url 'contacto' %}">CONTACTO</a></li>
                     {% endif %}
                 {% include '../usuarios/cerrar_sesion.html' %}
                 {% else %}
